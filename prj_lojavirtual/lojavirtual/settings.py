@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "main.apps.MainConfig",
     
 ]
-
+# Ao Adicionar algo aqui, tome cuidado pois a ordem altera os fatores
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -57,7 +57,7 @@ ROOT_URLCONF = "lojavirtual.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -69,17 +69,49 @@ TEMPLATES = [
         },
     },
 ]
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 WSGI_APPLICATION = "lojavirtual.wsgi.application"
+
+# Logging
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "Mensagem: %(levelnames)s %(mensage)s"
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "simple"
+        },
+    },
+    "loggers": {
+        "lojavirtual": {
+            "handlers": ["console"], 
+            "level": "DEBUG",
+            "propagate": True,
+        },
+        "main": {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+#"NAME": BASE_DIR / "db.sqlite3",
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -119,12 +151,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-
+# Arquivos staticos
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
+#Arquivos staticos root
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#Arquivos estaticos fornecidos pelos usuarios, no dir [upload]
+MEDIA_ROOT = os.path.join(BASE_DIR, "upload")
+MEDIA_URL = "/upload/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

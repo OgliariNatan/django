@@ -1,6 +1,8 @@
 # django
 Para aprendizado em django
 
+## Constatntes:
+* __MIDDLEWARE__ - Interceptam requisições, para autentificações <br>
 
 ### Para iniciar um projeto Django
 ```
