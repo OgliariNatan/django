@@ -12,3 +12,8 @@ django-admin startproject nome_do_projeto
 python manage.py runserver
 
 ```
+
+### No servidor de produção, criar a pasta para arquivos staticos:
+```
+python manage.py collectstatic
+```
