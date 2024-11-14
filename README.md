@@ -19,3 +19,15 @@ python manage.py runserver
 ```
 python manage.py collectstatic
 ```
+
+### Para migração do banco de dados
+```
+python manage.py migrate
+```
+
+### Para Verificação de variaveis declaradas no Django
+```
+python manage.py shell
+```
+* Após instancia o local da variavél ```from django.conf import arq_da_var```
+<br>
