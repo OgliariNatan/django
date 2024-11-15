@@ -20,6 +20,12 @@ class Produto(models.Model):
     """
     Define a tabela Produtos do banco de dados
     """
+    categoria = models.ForeignKey(
+        Categoria, 
+        related_name="produtos", 
+        null=True, 
+        on_delete=models.CASCADE
+        )
     nome = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
     descricao = models.TextField(blank=True)
