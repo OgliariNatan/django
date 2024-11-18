@@ -31,3 +31,5 @@ python manage.py shell
 ```
 * Após instancia o local da variavél ```from django.conf import arq_da_var```
 <br>
+
+https://www.geeksforgeeks.org/datetimefield-django-models/
