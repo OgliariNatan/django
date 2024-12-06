@@ -5,6 +5,12 @@ from .models import Question, Choice
 
 admin.site.register(Question)
 
-@admin.register(Choice)
-class ChoiceAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(Choice)
+# class ChoiceAdmin(admin.ModelAdmin):
+#     pass
+
+
+
+
+
+#https://docs.djangoproject.com/pt-br/5.1/intro/tutorial03/
