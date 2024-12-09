@@ -4,8 +4,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Question, Choice
 from django.template import loader
 from django.urls import reverse
+from django.views import generic
 
 # Create your views here.
+
 
 def index(request):
     latest_question_list = Question.objects.order_by("-pub_date")[:5]
@@ -13,13 +15,7 @@ def index(request):
     context = {"latest_question_list": latest_question_list,}
     return HttpResponse(template.render(context, request))
 
-# def detail(request, question_id):
-#     try:
-#         question = Question.objects.get(pk=question_id)
-#         #return HttpResponse("Você está olhando para a pergunta %s." % question_id)
-#     except Question.DoesNotExist:
-#         raise Http404("Esta questão não existe")
-#     return render(request, "polls/detail.html", {'question': question})
+
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, "polls/detail.html", {"question": question})
