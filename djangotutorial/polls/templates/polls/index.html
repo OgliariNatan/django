@@ -1,9 +1,58 @@
-{% if latest_question_list %}
-<ul>
-    {% for question in latest_question_list %}
-    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No polls are available.</p>
-{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Perguntas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background-image: url('{% static "imagens/meditacao.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: top;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container text-center">
+        {% if latest_question_list %}
+        <ul font-size="3em">
+            {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Nenhuma enquete está disponível.</p>
+        {% endif %}
+    </div>
+
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
