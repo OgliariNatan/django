@@ -1,4 +1,4 @@
-<!-- mysite/templates/home.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,11 +6,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial dos Projetos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .btn {
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Bem-vindo à Página Inicial dos Projetos!</h1>
-    <p>Esta é a página inicial dos seus projetos Django.</p>
+    <div class="container">
+        <h1>Bem-vindo à Página Inicial dos Projetos!</h1>
+        <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
+        <a href="{% url 'polls:index' %}" class="btn btn-secondary">Polls</a>
+    </div>
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
