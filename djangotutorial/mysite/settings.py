@@ -127,4 +127,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "polls/static")]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-#https://docs.djangoproject.com/pt-br/4.2/intro/tutorial04/
+#https://docs.djangoproject.com/pt-br/4.2/intro/tutorial07/
