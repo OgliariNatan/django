@@ -37,6 +37,20 @@
         <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
         <a href="{% url 'polls:index' %}" class="btn btn-secondary">Polls</a>
     </div>
+
+    <div id="cookiebar" class="cookie-police-bar" style="display: block;">
+        <div class="cookie-police-bar-title">
+            <h3>Esse Site usa Cookies</h3>
+            <button onclick="setCookieBar()" class="cookie-police-bar-title-button" aria-label="Fechar"></button>
+        </div>
+        <div class="cookie-police-bar-text">
+            <p>Esse site utiliza cookies para oferecer uma melhor experiência de navegação, analisar como você interage
+                em nosso site, otimizar o desempenho e personalizar o conteúdo. Ao utilizar este site, você concorda com
+                o uso de cookies. Saiba mais em nosso <a href="https://www.canalda" target="_blank"
+                    rel="noreferrer">Portal de Privacidade.</a></p>
+            <button onclick="setCookieBar()" class="cookie-police-bar-text-button">OK</button>
+        </div>
+    </div>
     <!-- Bootstrap JS e dependências -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>

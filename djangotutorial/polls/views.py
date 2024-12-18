@@ -18,7 +18,7 @@ def index(request):
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, "polls/detail.html", {"question": question})
+    return render(request, "polls/detail.html", {"question": question, 'choice_list': question.choice_set.all()})
 
 
 
