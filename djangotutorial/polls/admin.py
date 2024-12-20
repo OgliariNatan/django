@@ -14,7 +14,9 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInLine]
     list_display = ('question_text', 'pub_date', 'publicado_recentemente', 'inserido_por')
-    search_fields = ['question_text']
+    search_fields = ['question_text', "pub_date"] #define o campo de pesquisa
+    list_filter = ["pub_date"] #Adiciona filtro de pesquisa
+    date_hierarchy = 'pub_date'
 
 
 
