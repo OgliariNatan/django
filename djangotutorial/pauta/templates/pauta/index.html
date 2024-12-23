@@ -38,6 +38,13 @@
         .btn-voltar {
             margin: 20px 0;
         }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
     </style>
 </head>
 
@@ -48,9 +55,16 @@
             <h2 class="text-center">Pauta de Audiências</h2>
         </div>
     </header>
-    <div class="container">
-        <button type="button" class="btn btn-info btn-lg"><a href="http://127.0.0.1:8000/"
-                target="_blank">Início</a></button>
+    <div class="container btn-container">
+        <button type="button" class="btn btn-info btn-lg"><a href="http://127.0.0.1:8000/" target="_blank">Início</a>
+        </button>
+        <button type="button" class="btn btn-primary btn-lg">
+            <a href="http://127.0.0.1:8000/admin/" target="_blank" class="text-white text-decoration-none">Admin</a>
+        </button>
+        <button type="button" class="btn btn-secondary btn-lg">
+            <a href="http://127.0.0.1:8000/polls/" target="_blank"
+                class="text-white text-decoration-none">Questionário</a>
+        </button>
     </div>
 
     <div class="container">
@@ -67,7 +81,7 @@
             <tbody>
                 {% for pauta in pautas %}
                 <tr>
-                    <td class="border">{{ pauta.data }}</td>
+                    <td class="border">{{ pauta.data|date:"d/m/y" }}</td>
                     <td class="border">{{ pauta.hora }}</td>
                     <td class="border">{{ pauta.nome }}</td>
                     <td class="border">{{ pauta.situacao }}</td>
@@ -87,6 +101,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
