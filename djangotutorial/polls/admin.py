@@ -13,8 +13,10 @@ class QuestionAdmin(admin.ModelAdmin):
         ('Date information', {'fields': ['pub_date'], 'classes':['collapse']}),
     ]
     inlines = [ChoiceInLine]
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
-    search_fields = ['question_text']
+    list_display = ('question_text', 'pub_date', 'publicado_recentemente', 'inserido_por')
+    search_fields = ['question_text', "pub_date"] #define o campo de pesquisa
+    list_filter = ["pub_date"] #Adiciona filtro de pesquisa
+    date_hierarchy = 'pub_date'
 
 
 
