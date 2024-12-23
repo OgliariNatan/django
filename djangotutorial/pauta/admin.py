@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import  Pauta
 from .forms import PautaForm
-
 from django.conf.locale.pt_BR import formats as pt_BR_formats
 
 # Register your models here.
@@ -13,7 +12,7 @@ pt_BR_formats.DATETIME_FORMAT = 'd/m/Y H:i'
 admin.register(Pauta)
 class PautaAdmin(admin.ModelAdmin):
     form = PautaForm
-    list_display = ('data', 'hora', 'nome', 'situacao')
+    list_display = ('data', 'hora_formatada', 'nome', 'situacao')
     search_fields = ('nome', 'data')
     list_filter = ('data', 'nome')
     change_form_template = 'admin/pauta/change_form.html'  # Especifica o template personalizado

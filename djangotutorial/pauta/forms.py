@@ -8,5 +8,5 @@ class PautaForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'data': forms.DateInput(attrs={'type': 'date'}),
-            'hora': forms.TimeInput(attrs={'type': 'time','class' : 'time-input'})  # Alterar para o widget padrão de hora
+            'hora': forms.TimeInput(attrs={'type': 'time', 'class' : 'time-input'})  # Alterar para o widget padrão de hora
         }
