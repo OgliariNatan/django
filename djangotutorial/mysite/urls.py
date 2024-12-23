@@ -22,5 +22,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'), 
     path("polls/", include("polls.urls")),
+    path("pauta/", include('pauta.urls')),
     path("admin/", admin.site.urls),
 ]
