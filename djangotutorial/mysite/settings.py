@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #novas aplicações
     "polls.apps.PollsConfig",
+    "pauta",
 ]
 
 MIDDLEWARE = [

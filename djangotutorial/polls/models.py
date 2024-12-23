@@ -32,7 +32,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self) :
-        return self.Choice_text
+        return self.choice_text
     
 
 class AuthorAdmin(admin.ModelAdmin):
