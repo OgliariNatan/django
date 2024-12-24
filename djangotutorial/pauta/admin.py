@@ -21,12 +21,10 @@ class PautaAdmin(admin.ModelAdmin):
     #Cria condição para repetição
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
-        #input(obj.data)
         if obj.intervalo_repeticao and obj.numero_repeticoes:
+            data_atual = obj.data
             for i in range(1, obj.numero_repeticoes + 1):
-                nova_data = obj.data + timedelta(days=obj.intervalo_repeticao)
-
-                input(nova_data)
+                nova_data = data_atual + timedelta(days=obj.intervalo_repeticao)
                 Pauta.objects.create(
                     data = nova_data,
                     hora = obj.hora,
@@ -35,6 +33,7 @@ class PautaAdmin(admin.ModelAdmin):
                     intervalo_repeticao = None,
                     numero_repeticoes = None
                 )
+                data_atual = nova_data #Atualiza data para interação
 
     #Formata a data exibida no admin
     def data_formatada(self, obj):
