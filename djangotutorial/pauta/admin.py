@@ -21,9 +21,11 @@ class PautaAdmin(admin.ModelAdmin):
     #Cria condição para repetição
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
+        #input(obj.data)
         if obj.intervalo_repeticao and obj.numero_repeticoes:
             for i in range(1, obj.numero_repeticoes + 1):
-                nova_data = obj.data = timedelta(days=i * obj.intervalo_repeticao)
+                nova_data = obj.data + timedelta(days=obj.intervalo_repeticao)
+
                 input(nova_data)
                 Pauta.objects.create(
                     data = nova_data,
