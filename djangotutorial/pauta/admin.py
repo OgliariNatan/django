@@ -23,7 +23,9 @@ class PautaAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         if obj.intervalo_repeticao and obj.numero_repeticoes:
             data_atual = obj.data
-            for i in range(1, obj.numero_repeticoes + 1):
+            
+            #inicia no 2 pois o primeiro já foi adicionado
+            for i in range(2, obj.numero_repeticoes + 1):
                 nova_data = data_atual + timedelta(days=obj.intervalo_repeticao)
                 Pauta.objects.create(
                     data = nova_data,
