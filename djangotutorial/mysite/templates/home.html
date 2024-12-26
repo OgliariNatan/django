@@ -21,7 +21,27 @@
             margin: 0;
         }
 
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
         .container {
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             text-align: center;
         }
 
@@ -39,8 +59,10 @@
         <a href="{% url 'pauta:index' %}" class="btn btn-secondary">Pauta</a>
     </div>
 
-    <footer class="flex">
-        <h2 class="text-white">Rodapé</h2>
+    <footer class="footer">
+        <div class="containet">
+            <p class="mb-0">2025 Presidío regional de Maravilha - Todos os direitos reservados</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS e dependências -->
