@@ -1,4 +1,5 @@
 <!-- filepath: /C:/Users/AULA-1/Documents/GitHub/django/djangotutorial/pauta/templates/pauta/index.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -56,14 +57,13 @@
         </div>
     </header>
     <div class="container btn-container">
-        <button type="button" class="btn btn-info btn-lg"><a href="http://127.0.0.1:8000/" target="_blank">Início</a>
+        <button type="button" class="btn btn-info btn-lg"><a href="{% url 'home:home' %}" target="_blank">Início</a>
         </button>
         <button type="button" class="btn btn-primary btn-lg">
-            <a href="http://127.0.0.1:8000/admin/" target="_blank" class="text-white text-decoration-none">Admin</a>
+            <a href="{% url 'admin:index' %}" target="_blank" class="text-white text-decoration-none">Admin</a>
         </button>
         <button type="button" class="btn btn-secondary btn-lg">
-            <a href="http://127.0.0.1:8000/polls/" target="_blank"
-                class="text-white text-decoration-none">Questionário</a>
+            <a href="{% url 'polls:index' %}" target="_blank" class="text-white text-decoration-none">Questionário</a>
         </button>
     </div>
 

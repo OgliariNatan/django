@@ -1,6 +1,8 @@
 # django
 Para aprendizado em django
 
+### Ativar ambiente virtual
+``` source path_to_env/bin/activate ```
 ## Constatntes:
 * __MIDDLEWARE__ - Interceptam requisições, para autentificações <br>
 
