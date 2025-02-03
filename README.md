@@ -38,4 +38,7 @@ https://www.geeksforgeeks.org/datetimefield-django-models/
 
 <br>
 Verifica log
-```sudo tail -f /var/log/apache2/access.log```
+
+```
+sudo tail -f /var/log/apache2/access.log
+```
